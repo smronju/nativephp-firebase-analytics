@@ -1,0 +1,82 @@
+{
+    "name": "smronju/nativephp-firebase-analytics",
+    "version": "1.0.0",
+    "description": "Google Analytics for Firebase on Android — installs the SDK and your google-services.json, logs custom events, and turns collection on or off for a user's opt-out.",
+    "namespace": "FirebaseAnalytics",
+    "keywords": ["nativephp", "mobile", "firebase", "analytics", "google-analytics", "admob"],
+    "category": "utilities",
+    "license": "MIT",
+    "pricing": {
+        "type": "free"
+    },
+    "author": {
+        "name": "Mohammad Shoriful Islam Ronju",
+        "email": "smronju@gmail.com",
+        "url": "https://github.com/smronju"
+    },
+    "homepage": "https://github.com/smronju/nativephp-firebase-analytics",
+    "repository": "https://github.com/smronju/nativephp-firebase-analytics",
+    "funding": [],
+    "platforms": [
+        "android"
+    ],
+    "icon": "resources/icon.png",
+    "screenshots": [],
+    "bridge_functions": [
+        {
+            "name": "FirebaseAnalytics.SetCollectionEnabled",
+            "android": "com.smronju.plugins.nativephp_firebase_analytics.FirebaseAnalyticsFunctions.SetCollectionEnabled",
+            "android_params": ["context"],
+            "description": "Turn analytics collection on or off — persists across launches"
+        },
+        {
+            "name": "FirebaseAnalytics.LogEvent",
+            "android": "com.smronju.plugins.nativephp_firebase_analytics.FirebaseAnalyticsFunctions.LogEvent",
+            "android_params": ["context"],
+            "description": "Log a custom event with optional string/number parameters"
+        },
+        {
+            "name": "FirebaseAnalytics.LogScreenView",
+            "android": "com.smronju.plugins.nativephp_firebase_analytics.FirebaseAnalyticsFunctions.LogScreenView",
+            "android_params": ["context"],
+            "description": "Log a screen_view event for a native screen"
+        }
+    ],
+    "android": {
+        "min_version": 23,
+        "permissions": [
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE"
+        ],
+        "repositories": [],
+        "dependencies": {
+            "implementation": [
+                "com.google.firebase:firebase-analytics:23.0.0"
+            ]
+        },
+        "gradle_plugins": [
+            {
+                "id": "com.google.gms.google-services",
+                "version": "4.4.3",
+                "apply_to": "app"
+            }
+        ],
+        "project_files": [
+            {
+                "sources": "google-services.json",
+                "destination": "app/google-services.json",
+                "required": true
+            }
+        ],
+        "activities": [],
+        "services": [],
+        "receivers": [],
+        "providers": []
+    },
+    "assets": {
+        "android": []
+    },
+    "secrets": [],
+    "events": [],
+    "service_provider": "Smronju\\NativephpFirebaseAnalytics\\FirebaseAnalyticsServiceProvider"
+}

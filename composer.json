@@ -1,0 +1,55 @@
+{
+    "name": "smronju/nativephp-firebase-analytics",
+    "description": "Google Analytics for Firebase on Android — installs the SDK and your google-services.json, logs custom events, and turns collection on or off for a user's opt-out.",
+    "version": "1.0.0",
+    "type": "nativephp-plugin",
+    "license": "MIT",
+    "homepage": "https://github.com/smronju/nativephp-firebase-analytics",
+    "keywords": [
+        "nativephp",
+        "mobile",
+        "laravel",
+        "firebase",
+        "analytics"
+    ],
+    "authors": [
+        {
+            "name": "Mohammad Shoriful Islam Ronju",
+            "email": "smronju@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/smronju/nativephp-firebase-analytics/issues",
+        "source": "https://github.com/smronju/nativephp-firebase-analytics"
+    },
+    "require": {
+        "php": "^8.2",
+        "nativephp/mobile": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Smronju\\NativephpFirebaseAnalytics\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Smronju\\NativephpFirebaseAnalytics\\FirebaseAnalyticsServiceProvider"
+            ]
+        },
+        "nativephp": {
+            "manifest": "nativephp.json"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.0"
+    },
+    "scripts": {
+        "test": "pest"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
